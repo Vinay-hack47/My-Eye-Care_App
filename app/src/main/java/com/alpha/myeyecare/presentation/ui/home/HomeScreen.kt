@@ -46,7 +46,6 @@ fun HomeScreen(
     navController: NavController,
     modifier: Modifier = Modifier,
     shouldCheckPermission: Boolean,
-    onGoToSuggestionsClicked: () -> Unit,
     updatePermissionStatus: () -> Unit
 ) {
     var showExitDialog by remember { mutableStateOf(false) }
@@ -85,23 +84,8 @@ fun HomeScreen(
                     titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             )
-        }, floatingActionButton = {
-            ExtendedFloatingActionButton(
-                onClick = {
-                    onGoToSuggestionsClicked.invoke()
-                },
-                icon = {
-                    Icon(
-                        Icons.Filled.RateReview, contentDescription = "Suggestion Icon"
-                    )
-                },
-                text = {
-                    Text(text = "Suggestion")
-                },
-                containerColor = MaterialTheme.colorScheme.primary,
-                contentColor = MaterialTheme.colorScheme.onPrimary
-            )
-        }, floatingActionButtonPosition = FabPosition.Companion.End
+        }
+        , floatingActionButtonPosition = FabPosition.Companion.End
     ) { paddingValues ->
         Column(
             modifier = modifier

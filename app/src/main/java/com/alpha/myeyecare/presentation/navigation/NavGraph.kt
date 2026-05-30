@@ -15,7 +15,6 @@ import com.alpha.myeyecare.common.constants.ReminderTypes.EYE_REMINDER
 import com.alpha.myeyecare.presentation.ui.detailScreen.SetupReminderScreen
 import com.alpha.myeyecare.presentation.ui.home.HomeScreen
 import com.alpha.myeyecare.presentation.ui.splash.SplashScreen
-import com.alpha.myeyecare.presentation.ui.suggestion.UserSuggestionScreen
 
 @Composable
 fun NavGraph() {
@@ -29,23 +28,13 @@ fun NavGraph() {
         composable(AppDestinations.HOME_SCREEN) {
             HomeScreen(
                 navController = navController,
-                shouldCheckPermission = shouldShowPermissionDialog == true,
-                onGoToSuggestionsClicked = {
-                    navController.navigate(AppDestinations.USER_SUGGESTION_SCREEN)
-                },
+                shouldCheckPermission = shouldShowPermissionDialog,
                 updatePermissionStatus = {
                     shouldShowPermissionDialog = false
                 }
             )
         }
 
-        composable(AppDestinations.USER_SUGGESTION_SCREEN) {
-            UserSuggestionScreen(
-                onNavigateBack = {
-                    navController.popBackStack()
-                }
-            )
-        }
 
         composable(AppDestinations.SPLASH_SCREEN) {
             SplashScreen(navController = navController)
