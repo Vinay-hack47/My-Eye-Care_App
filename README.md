@@ -53,8 +53,7 @@ com.alpha.myeyecare/
 │   │   │   ├── Reminder.kt  
 │   │   └── ReminderDatabase.kt 
 │   │ 
-│   └── repository/                 # Repository implementation
-│       ├── SuggectionRepositoryImpl.kt  
+│   └── repository/                 # Repository implementation  
 │       └── ReminderRepositoryImpl.kt  
 │  
 ├── di/                             
@@ -71,7 +70,6 @@ com.alpha.myeyecare/
 │   │ 
 │   ├── repository/                 # Abstract repository interfaces 
 │   │   ├── ReminderRepository.kt 
-│   │   └── SuggestionRepository.kt 
 │   │ 
 │   └── usecase/                   
 │       ├── CheckReminderStatusUseCase.kt 
@@ -93,9 +91,6 @@ com.alpha.myeyecare/
 │       ├── splash/ 
 │       │   ├── SplashScreen.kt
 │       │   └── SplashViewModel.kt 
-│       ├── suggestion/ 
-│       │   ├── SuggestionSubmissionViewModel.kt 
-│       │   └── UserSuggestionScreen.kt
 │       ├── theme/ 
 │       │   ├── Color.kt 
 │       │   ├── Theme.kt 
